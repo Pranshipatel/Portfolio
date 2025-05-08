@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "pricedown";
+  src: url("./pricedown.otf");
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "pricedown";
+}
+
+
+@media screen and (max-width: 1000px) {
+  .text{
+    margin-top: 18vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text h1{
+    font-size: 15vw;
+  }
+  .ps5{
+    display: none;
+  }
+  .imagesdiv .character {
+    display: none;
+  }
+  .sec-page{
+    height: max-content;
+  }
+  .cntnr{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .limg{
+    display: none;
+  }
+
+  .rg{
+    width: 100%;
+    padding: 10vw;
+  }
+}
+@media screen and (max-width: 800px) {
+  .logo-text{
+    font-size: 5vw;
+  }
+  .text h1{
+    font-size: 17vw;
+  }
+  .imagesdiv .character {
+    display: none;
+  }
+   
+}
+@media screen and (max-width: 660px) {
+  
+ 
+  .text h1{
+    margin-left: 0;
+    font-size: 17vw;
+  }
+  .imagesdiv .character {
+    display: none;
+  }
+}
