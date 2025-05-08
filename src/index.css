@@ -45,6 +45,7 @@ body {
     width: 100%;
     padding: 10vw;
   }
+  
 }
 @media screen and (max-width: 800px) {
   .logo-text{
@@ -56,7 +57,16 @@ body {
   .imagesdiv .character {
     display: none;
   }
-   
+  .rg{
+    padding: 12vw;
+  }
+  .rg h1{
+    font-size: 8vw;
+  }
+  .rg button{
+    font-size: 5vw;
+    padding: 2vw;
+  }
 }
 @media screen and (max-width: 660px) {
   
