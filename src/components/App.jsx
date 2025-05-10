@@ -2,9 +2,17 @@ import React, { useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import "remixicon/fonts/remixicon.css";
+import { TbMenu3 } from "react-icons/tb";
+import { AnimatePresence } from "framer-motion";
+import AnimatedPage from "./Animated";
 
 function App() {
   let [showContent, setShowContent] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openMenu = () => setIsOpen(true);
+  const closeMenu = () => setIsOpen(false);
+
   useGSAP(() => {
     const tl = gsap.timeline();
 
@@ -91,6 +99,9 @@ function App() {
     });
   }, [showContent]);
 
+
+  
+
   return (
     <>
       <div className="svg flex items-center justify-center fixed top-0 left-0 z-[100] w-full h-screen overflow-hidden bg-[#000]">
@@ -124,14 +135,16 @@ function App() {
       </div>
       {showContent && (
         <div className="main w-full rotate-[-10deg] scale-[1.7]">
-          <div className="landing overflow-hidden relative w-full h-screen bg-black">
+          <div className="landing  overflow-hidden relative w-full h-screen bg-black">
             <div className="navbar absolute top-0 left-0 z-[10] w-full py-10 px-10">
-              <div className="logo flex gap-7">
-                <div className="lines flex flex-col gap-[5px]">
-                  <div className="line w-[4vw] h-[0.4vw] bg-white"></div>
-                  <div className="line w-[3vw] h-[0.4vw] bg-white"></div>
-                  <div className="line w-[2vw] h-[0.4vw] bg-white"></div>
+              <div className="logo relative flex gap-7 text-white">
+                <div className="text-2xl cursor-pointer" onClick={openMenu}>
+                  <TbMenu3 />
                 </div>
+
+                <AnimatePresence>
+                  {isOpen && <AnimatedPage closeMenu={closeMenu} />}
+                </AnimatePresence>
                 <h3 className="logo-text text-4xl -mt-[8px] leading-none text-white">
                   Pranshi
                 </h3>
@@ -167,11 +180,11 @@ function App() {
                   Scroll Down
                 </h3>
               </div>
-              <img
+              {/* <img
                 className="ps5 absolute h-[55px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                 src="./ps5.png"
                 alt=""
-              />
+              /> */}
             </div>
           </div>
           <div className="sec-page w-full h-screen flex items-center justify-between  bg-black">
@@ -186,20 +199,20 @@ function App() {
               <div className="rg w-[40%]  py-30 flex flex-col text-center items-center">
                 <h1 className="text-8xl">Full Stack Developer
                 </h1>
-                <p className="mt-10 text-xl font-[Helvetica_Now_Display]">
-                I craft modern web applications with a focus on clean code, performance, and intuitive user experiences. Passionate about bringing creative solutions to complex problems.
+                <p className="mt-10 text-xl font-sans">
+                  I craft modern web applications with a focus on clean code, performance, and intuitive user experiences. Passionate about bringing creative solutions to complex problems.
                 </p>
-                <p className="mt-3 text-xl font-[Helvetica_Now_Display]">
-                I work across the full stack, combining frontend and backend expertise with AI integration to deliver smart, scalable solutions. My strong foundation in Data Structures and Algorithms with Java ensures efficient and reliable application logic.
+                <p className="mt-3 text-xl font-sans">
+                  I work across the full stack, combining frontend and backend expertise with AI integration to deliver smart, scalable solutions. My strong foundation in Data Structures and Algorithms with Java ensures efficient and reliable application logic.
                 </p>
-                <p className="mt-10 text-xl font-[Helvetica_Now_Display]">
-                Passionate about continuous learning, I thrive in collaborative environments where I can contribute to real-world projects and explore innovative technologies that drive meaningful impact.
+                <p className="mt-10 text-xl font-sans">
+                  Passionate about continuous learning, I thrive in collaborative environments where I can contribute to real-world projects and explore innovative technologies that drive meaningful impact.
 
 
                 </p>
-                <button className="bg-yellow-500 px-10 py-10 text-black mt-10 text-4xl w-fit">
+                <a href="https://github.com/Pranshipatel" className="bg-yellow-500 px-10 py-10 text-black mt-10 text-4xl w-fit">
                   See my works
-                </button>
+                </a>
               </div>
             </div>
           </div>

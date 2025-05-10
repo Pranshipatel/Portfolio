@@ -77,7 +77,8 @@ export default function ContactPage() {
       <FaInstagram />
     </a>
     <a
-      href="https://leetcode.com/u/Pranshii1/"
+      href="https://leetcode.com/u/Pranshii1/+
+      // "
       target="_blank"
       rel="noopener noreferrer"
       className="hover:text-white transition"

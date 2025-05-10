@@ -1,6 +1,7 @@
 import React from 'react'
-import App from './App'
-import ContactPage from './Contact'
+import App from './components/App'
+import ContactPage from './components/Contact'
+import SkillSection from './components/Skills'
 
 const Final = () => {
   return (
